@@ -69,3 +69,4 @@ def retructure_cols(df):
                      "x68": {"January": "Jun", "July": "Jul", "sept.": "Sept", "Dev": "Dec"}}
 
     df.replace(category_dict, inplace=True)
+
