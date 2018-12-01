@@ -70,3 +70,16 @@ def retructure_cols(df):
 
     df.replace(category_dict, inplace=True)
 
+
+def flter_columns(df):
+    cols = ['x37', 'x58', 'x35_mon', 'x75', 'x45', 'x68_Feb', 'x34_tesla',
+           'x35_tue', 'x68_Jul', 'x97', 'x83', 'x41', 'x99', 'x44', 'x96', 'x72',
+           'x21', 'x34_Honda', 'x68_Apr', 'x70', 'x5', 'x66', 'x10', 'x50', 'x40',
+           'x73', 'x63', 'x53', 'x22', 'x51', 'x2', 'x1', 'x12', 'x4', 'x56',
+           'x78', 'x79', 'x27', 'x43', 'x95', 'x57', 'x33', 'x34_Toyota', 'x0',
+           'x19', 'x8', 'x3', 'x69', 'x42', 'x25', 'y']
+
+    try:
+        return df[cols]
+    except:
+        return df[cols[:-1]]
