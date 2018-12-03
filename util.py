@@ -63,7 +63,7 @@ def plot_cols(dct, name="data"):
 
 
 
-def retructure_cols(df):
+def restructure_cols(df):
     category_dict = {"x35": {"monday": "mon", "tuesday": "tue", "wednesday": "wed",
                              "thurday": "thur", "friday": "fri"},
                      "x68": {"January": "Jun", "July": "Jul", "sept.": "Sept", "Dev": "Dec"}}
@@ -83,3 +83,19 @@ def flter_columns(df):
         return df[cols]
     except:
         return df[cols[:-1]]
+
+
+
+def load_data(path):
+    """
+    Loads in the data, and performs all cleaning processes
+    :param path: path to data file
+    :return: dataframe
+    """
+    df = pd.read_csv(path)
+    regex(df, ["x41", "x45"])
+    restructure_cols(df)
+    df = pd.get_dummies(df, prefix=["x34","x35","x68","x93"])
+    df = flter_columns(df)
+    df.dropna(inplace=True)
+    return df
