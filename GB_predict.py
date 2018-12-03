@@ -1,5 +1,5 @@
 from GB_model import GB_Classification
-from GB_model import load_data
+from util import load_data
 import numpy as np
 import pickle
 
@@ -27,5 +27,5 @@ if __name__=="__main__":
     y_pred = model.probability(X_test_scaled)
 
     # Save results to a text file
-    np.savetxt("result/results1.csv", y_pred, delimiter=",")
+    np.savetxt("result/results1.csv", y_pred[:,1], delimiter=",")
     print(y_pred)
