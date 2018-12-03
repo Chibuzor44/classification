@@ -1,5 +1,5 @@
-from RF_model import GB_Classification
-from RF_model import load_data
+from GB_model import GB_Classification
+from GB_model import load_data
 import numpy as np
 import pickle
 
